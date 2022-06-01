@@ -1,9 +1,9 @@
 import './style.css';
 
-function component(class) {
+function component(compClass) {
   const element = document.createElement('div');
-  if (class) {
-    element.classList.add(class);
+  if (compClass) {
+    element.classList.add(compClass);
   }
   
   return element
