@@ -1,7 +1,7 @@
 import './style.css';
 
-function component(compClass) {
-  const element = document.createElement('div');
+function component(type, compClass=null) {
+  const element = document.createElement(type);
   if (compClass) {
     element.classList.add(compClass);
   }
@@ -9,4 +9,4 @@ function component(compClass) {
   return element
 }
 
-document.body.appendChild(component());
+document.body.appendChild(component('div', 'content-container'));
