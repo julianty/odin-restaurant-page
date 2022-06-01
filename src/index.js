@@ -1,3 +1,10 @@
-console.log("This is a test");
-console.log("Maybe now?");
-console.log("Hello");
+import './style.css';
+
+function component() {
+  const element = document.createElement('div');
+
+  
+  return element
+}
+
+document.body.appendChild(component());
