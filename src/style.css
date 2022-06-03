@@ -28,6 +28,12 @@ div.content-container {
   justify-items: center;
 }
 
-div.about-us-container {
+div.tab-container {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 20px
+}
+
+div.active-tab-container {
   width: 70%;
 }
