@@ -5,12 +5,17 @@
 
 :root {
   --content-padding : 30px;
+  --footer-color: #004e64ff;
+  --content-color: #231123ff;
+  --tab-color: #f4f7f5ff;
+  --sandy-brown: #fc9f5bff;
+  --chinese-red: #a3320bff;
 }
 
 body {
-  height: 100%;
+  height: 100vh;
   display: grid;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: 100px 1fr 100px;
 }
 
 div.header-container {
@@ -21,11 +26,34 @@ div.header-container {
   justify-items: center;
 }
 
+div.logo {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  font-size: 2rem;
+}
+
+#logo {
+  height: 100px;
+}
+
+
 div.content-container {
   width: 100%;
   height: 100%;
   display: grid;
+  background-color: var(--content-color);
   justify-items: center;
+  align-items: center;
+}
+
+div.tab-aggregate {
+  height: 80%;
+  width: 80%;
+  display: grid;
+  justify-items: center;
+  grid-template-rows: auto 1fr;
+  background-color: var(--tab-color);
 }
 
 div.tab-container {
@@ -36,4 +64,8 @@ div.tab-container {
 
 div.active-tab-container {
   width: 70%;
+}
+
+.footer-container {
+  background-color: var(--footer-color);
 }

@@ -1,3 +1,5 @@
+import Logo from './JJKitchen.png';
+
 function pageLoad() {
   function component(type, compClass=null, text=null) {
     const element = document.createElement(type);
@@ -11,31 +13,39 @@ function pageLoad() {
     return element
   }
 
+  // Create Header
+  const HeaderContainer = document.createElement('div');
+  HeaderContainer.classList.add('header-container'); 
+  const LogoContainer = component('div', 'logo');
+  const LogoText = component('p', 'logo-text','Jen and Julian\'s Kitchen');
+  const MyLogo = new Image();
+  MyLogo.src = Logo;
+  MyLogo.id = 'logo';
+  LogoContainer.appendChild(MyLogo);
+  LogoContainer.appendChild(LogoText);
+  HeaderContainer.appendChild(LogoContainer);
+  document.body.appendChild(HeaderContainer);
 
+  // Create content container
   const ContentContainer = component('div', 'content-container');
- 
+  const TabAggregate = component('div', 'tab-aggregate');
   const TabContainer = component('div', 'tab-container');
-  const AboutUsTab = component('button', 'about-us', 'About Us');
-  const MenuTab = component('button', 'menu', 'Menu');
-  const OrderTab = component('button', 'order', 'Order');
+  const AboutUsTab = component('h2', 'about-us', 'About Us');
+  const MenuTab = component('h2', 'menu', 'Menu');
+  const OrderTab = component('h2', 'order', 'Order');
   TabContainer.appendChild(AboutUsTab);
   TabContainer.appendChild(MenuTab);
   TabContainer.appendChild(OrderTab);
-
-  ContentContainer.appendChild(TabContainer);
-
+  TabAggregate.appendChild(TabContainer);
   const ActiveTabContainer = component('div', 'active-tab-container');
-  const DummyText = component('p', 'default-text', `Our kitchen started as a passion
-          project that carried our love for cooking meals together
-          into a successful business. The story begins as a couple
-          sits together at the dinner table in 2022 thinking: 
-          "Oh. This is really good, and I think I can make it at home!" Many years
-          later, and we are here serving the food that we grew up
-          with.`);
-  ActiveTabContainer.appendChild(DummyText);
-  ContentContainer.appendChild(ActiveTabContainer);
-
+  TabAggregate.appendChild(ActiveTabContainer);
+  ContentContainer.appendChild(TabAggregate);
   document.body.appendChild(ContentContainer);
+
+  // Create footer
+  const FooterContainer = component('div', 'footer-container');
+  document.body.appendChild(FooterContainer);
+
   return ActiveTabContainer
 }
 

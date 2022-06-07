@@ -4,13 +4,9 @@ import writeAboutUs from './writeAboutUs';
 import writeMenu from './writeMenu';
 import writeOrder from './writeOrder'
 
-// Create Header
-const HeaderContainer = document.createElement('div');
-HeaderContainer.classList.add('header-container'); 
-HeaderContainer.textContent = 'Jen and Julian\'s Kitchen';
-document.body.appendChild(HeaderContainer);
-
+// Load page
 const ActiveTabContainer = pageLoad();
+ActiveTabContainer.appendChild(writeAboutUs());
 
 // Add listeners to tabs
 const AboutUsTab = document.querySelector('.about-us');
@@ -23,7 +19,6 @@ OrderTab.addEventListener('click', e => setActiveTab('order'));
 
 function setActiveTab(tab) {
   ActiveTabContainer.removeChild(ActiveTabContainer.firstChild);
-  // console.log(ActiveTabContainer);
   switch (tab) {
     case 'about-us':
       ActiveTabContainer.appendChild(writeAboutUs());
